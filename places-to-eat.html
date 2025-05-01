@@ -7,120 +7,107 @@ Date: 04/24/2025
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Places to Eat & Drink in Eastern Kentucky</title>
-    <link rel="stylesheet" href="css/styles.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Places to Eat & Drink in Eastern Kentucky</title>
+  <link rel="stylesheet" href="css/styles.min.css" />
 </head>
 <body>
-    <header>
-        <h1>Explore Eastern Kentucky</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="things-to-do.html">Things to Do</a></li>
-                <li><a href="local-music.html">Local Music</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Explore Eastern Kentucky</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="things-to-do.html">Things to Do</a></li>
+        <li><a href="local-music.html">Local Music</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <div class="content-wrapper">
-            <section id="places-to-eat">
-                <h2>Places to Eat & Drink in Eastern Kentucky</h2>
+  <main>
+    <section id="places-to-eat" class="content-wrapper">
+      <h2>Places to Eat & Drink in Eastern Kentucky</h2>
 
-                <ul>
-                    <li>
-                        <a href="https://miguelspizza.com" target="_blank">Miguel's Pizza</a> – A Natural Bridge institution
-                        <br>
-                        <figure>
-                            <img src="images/miguels-sign.jpg" alt="Miguel's Pizza sign with yellow background and long-haired character" class="menu-img">
-                            <figcaption>
-                                Miguel's Pizza - beloved by climbers and pizza lovers alike
-                            </figcaption>
-                        </figure>
+      <div class="menu-block">
+        <h3><a href="https://miguelspizza.com/" target="_blank">Miguel's Pizza</a></h3>
+        <figure>
+          <img src="images/miguels-sign.jpg" alt="Miguel's Pizza sign" />
+          <figcaption>Miguel's Pizza - beloved by climbers and pizza lovers alike</figcaption>
+        </figure>
 
-                        <div class="menu-button-wrapper">
-                            <button onclick="toggleMenu()" class="menu-toggle">View Menu</button>
-                        </div>
-
-                        <div id="menu-container" style="display: none;">
-                            <table class="menu-table">
-                                <thead>
-                                    <tr><th>Item</th><th>Description</th><th>Price</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Whole Pizza BYO</td><td>8-slice pizza with tomato sauce and mozzarella; build your own</td><td>$12.00</td></tr>
-                                    <tr><td>Half Pizza BYO</td><td>4-slice pizza with sauce and cheese; choose your toppings</td><td>$8.00</td></tr>
-                                    <tr><td>Gluten-Free Pizza</td><td>4-slice gluten-free crust with your choice of toppings</td><td>$10.00</td></tr>
-                                    <tr><td>Cheesy Bread</td><td>Fresh baked cheesy bread for the cabin</td><td>$6.00</td></tr>
-                                    <tr><td>B/A/L/T Sandwich</td><td>Bacon, avocado, lettuce & tomato on Miguel’s bread</td><td>$10.00</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="https://www.sawstonebrewing.com/" target="_blank">Sawstone Brewing</a> - Local craft beers and brews
-                        <br>
-                        <figure>
-                            <img src="images/sawstone-beer.jpg" alt="A pint of Sawstone Brewing Co. beer in Morehead, Kentucky" class="menu-img">
-                            <figcaption>
-                                Sawstone offers many locally crafted beer and wine
-                            </figcaption>
-                        </figure>
-                    </li>
-
-                    <li>
-                        <a href="https://www.facebook.com/popsbbqmorgan/" target="_blank">Pop's BBQ</a> - Traditional Southern cooking
-                        <br>
-                        <figure>
-                            <img src="images/pops.jpeg" alt="Pop's BBQ menu showing smoked meats and sandwiches" class="menu-img">
-                            <figcaption>
-                                Pop's BBQ menu features brisket, pulled pork, ribs, and more — served with classic house sides
-                            </figcaption>       
-                        </figure>
-
-                        <div class="menu-button-wrapper">
-                            <button onclick="togglePopsMenu()" class="menu-toggle">View Menu</button>
-                        </div>
-
-                        <div id="pops-menu" style="display: none;">
-                            <table class="menu-table">
-                                <thead>
-                                    <tr><th>Item</th><th>Description</th><th>Price</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Brisket Plate</td><td>Slow-smoked sliced brisket with two sides</td><td>$13.00</td></tr>
-                                    <tr><td>Pulled Pork Sandwich</td><td>Smoked pork shoulder with BBQ sauce</td><td>$9.00</td></tr>
-                                    <tr><td>Rib Basket</td><td>Half rack of ribs with fries and slaw</td><td>$14.00</td></tr>
-                                    <tr><td>Smoked Chicken</td><td>Quarter or half chicken, seasoned and smoked to perfection</td><td>$11.00</td></tr>
-                                    <tr><td>Mac & Cheese Bowl</td><td>Creamy baked mac and cheese with pork or brisket topping</td><td>$8.50</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+        <div class="menu-button-wrapper">
+          <button class="menu-toggle" onclick="toggleMiguelMenu()">View Menu</button>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 Eastern Kentucky Tourism Group | Contact us: info@easternkentuckytourism.com</p>
-    </footer>
+        <div id="miguel-menu" class="tap-accordion">
+          <table class="menu-table">
+            <thead>
+              <tr><th>Item</th><th>Description</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Whole Pizza BYO</td><td>8-slice pizza with tomato sauce and mozzarella; build your own toppings</td><td>$12.00</td></tr>
+              <tr><td>Half Pizza BYO</td><td>4-slice pizza with tomato sauce and mozzarella; build your own toppings</td><td>$8.00</td></tr>
+              <tr><td>Gluten-Free Pizza BYO</td><td>4-slice gluten-free pizza with choice of crust flavor and toppings</td><td>$10.00</td></tr>
+              <tr><td>Cheesy Bread</td><td>Fresh baked cheesy bread to cook at your rental cabin or house</td><td>$6.00</td></tr>
+              <tr><td>Sandwich B/A/L/T</td><td>Fresh avocado, real bacon strips, lettuce, and tomato on Miguel's bread</td><td>$10.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu-container");
-            menu.style.display = menu.style.display === "none" ? "block" : "none";
-        }
+      <div class="menu-block">
+        <h3><a href="https://www.sawstonebrewing.com/" target="_blank">Sawstone Brewing</a></h3>
+        <figure>
+          <img src="images/sawstone-beer.jpg" alt="A pint of Sawstone Brewing Co. beer" />
+          <figcaption>Sawstone offers many locally crafted beer and wine</figcaption>
+        </figure>
 
-        function togglePopsMenu() {
-            const menu = document.getElementById("pops-menu");
-            menu.style.display = menu.style.display === "none" ? "block" : "none";
-        }
-    </script>
+        <div class="menu-button-wrapper">
+          <button class="menu-toggle" onclick="toggleTapList()">What's on Tap?</button>
+        </div>
+
+        <div id="tap-menu" class="tap-accordion">
+          <ul class="beer-list">
+            <li>Light Beer</li>
+            <li>Wheat Ale</li>
+            <li>Ky Common</li>
+            <li>Stout</li>
+            <li>Red Ale</li>
+            <li>Kolsch</li>
+            <li>Cream Ale</li>
+            <li>IPA</li>
+            <li>Lager</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="menu-block">
+        <h3><a href="https://www.facebook.com/popsbarbq/" target="_blank">Pop's BBQ</a></h3>
+        <figure>
+          <img src="images/pops.jpeg" alt="Pop's BBQ menu" />
+          <figcaption>Pop's BBQ menu features brisket, pulled pork, ribs, and more - served with classic house sides</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eastern Kentucky Tourism Group | Contact us: info@easternkentuckytourism.com</p>
+  </footer>
+
+  <script>
+    function toggleMiguelMenu() {
+      const menu = document.getElementById("miguel-menu");
+      menu.classList.toggle("show");
+    }
+
+    function toggleTapList() {
+      const tap = document.getElementById("tap-menu");
+      tap.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
+
