@@ -37,42 +37,46 @@ Date: 04/24/2025
           <li>Address: 123 Appalachian Way, Lexington, KY</li>
         </ul>
 
-        <button class="menu-toggle" onclick="toggleForm()">Start Contact Form</button>
+        <div class="menu-button-wrapper">
+          <button class="menu-toggle" onclick="toggleContactForm()">Contact Form</button>
+        </div>
 
         <div class="form-wrapper" id="formWrapper">
-          <form id="contact-form" class="menu-table" action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+          <div class="contact-form-block">
+            <form id="contact-form" class="menu-table" action="#" method="post">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
 
-            <label for="topic">Topic:</label>
-            <select id="topic" name="topic">
-              <option value="info">General Info</option>
-              <option value="travel">Travel Planning</option>
-              <option value="events">Events</option>
-              <option value="other">Other</option>
-            </select>
+              <label for="topic">Topic:</label>
+              <select id="topic" name="topic">
+                <option value="info">General Info</option>
+                <option value="travel">Travel Planning</option>
+                <option value="events">Events</option>
+                <option value="other">Other</option>
+              </select>
 
-            <fieldset>
-              <legend>How should we contact you?</legend>
-              <label><input type="radio" name="contact-method" value="email" required /> Email</label><br/>
-              <label><input type="radio" name="contact-method" value="phone" /> Phone</label>
-            </fieldset>
+              <fieldset>
+                <legend>How should we contact you?</legend>
+                <label><input type="radio" name="contact-method" value="email" required /> Email</label><br />
+                <label><input type="radio" name="contact-method" value="phone" /> Phone</label>
+              </fieldset>
 
-            <fieldset>
-              <legend>What are you interested in?</legend>
-              <label><input type="checkbox" name="interests" value="hiking" /> Hiking</label><br/>
-              <label><input type="checkbox" name="interests" value="music" /> Local Music</label><br/>
-              <label><input type="checkbox" name="interests" value="food" /> Food &amp; Drink</label>
-            </fieldset>
+              <fieldset>
+                <legend>What are you interested in?</legend>
+                <label><input type="checkbox" name="interests" value="hiking" /> Hiking</label><br />
+                <label><input type="checkbox" name="interests" value="music" /> Local Music</label><br />
+                <label><input type="checkbox" name="interests" value="food" /> Food &amp; Drink</label>
+              </fieldset>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Submit</button>
-          </form>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
           <p id="confirmation"></p>
         </div>
       </section>
@@ -84,24 +88,22 @@ Date: 04/24/2025
   </footer>
 
   <script>
-    function toggleForm() {
-      document.getElementById("formWrapper").classList.toggle("show");
+    function toggleContactForm() {
+      const formWrapper = document.getElementById("formWrapper");
+      formWrapper.classList.toggle("show");
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("contact-form");
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
       const confirmation = document.getElementById("confirmation");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        confirmation.textContent = `Thanks for your message, ${name}! We'll get back to you soon.`;
-        confirmation.classList.add("show");
-        form.reset();
-      });
+      confirmation.textContent = `Thanks for your message, ${name}! We'll get back to you soon.`;
+      confirmation.classList.add("show");
+      this.reset();
     });
   </script>
 </body>
 </html>
+
 
 

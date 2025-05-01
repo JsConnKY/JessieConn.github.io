@@ -121,7 +121,6 @@ input, select, textarea {
     padding: 0.75em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s, box-shadow 0.3s;
     font-size: 1em;
 }
 
@@ -191,7 +190,6 @@ th, td {
     border: 1px solid #ccc;
     padding: 0.75em;
     text-align: left;
-    vertical-align: top;
 }
 
 th {
@@ -228,7 +226,7 @@ audio {
     max-width: 600px;
 }
 
-/* Hero Sections */
+/* Hero Backgrounds */
 .hero {
     background: url("../images/eky.jpg") no-repeat center center;
     background-size: cover;
@@ -241,7 +239,9 @@ audio {
     color: white;
 }
 
-.hero::before {
+.hero::before,
+.hero-history::before,
+.hero-music::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -249,7 +249,7 @@ audio {
     z-index: 1;
 }
 
-.hero-content {
+.hero-content, .hero-history .hero-content, .hero-music .hero-content {
     z-index: 2;
     padding: 2em;
     background-color: rgba(0, 0, 0, 0.3);
@@ -258,7 +258,6 @@ audio {
 
 .hero-content h2 {
     font-size: 3em;
-    margin-bottom: 0.5em;
     color: #fff;
 }
 
@@ -279,21 +278,6 @@ audio {
     color: white;
 }
 
-.hero-history::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.hero-history .hero-content {
-    z-index: 2;
-    padding: 2em;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-}
-
 .hero-music {
     background: url("../images/instruments.jpg") no-repeat center center;
     background-size: cover;
@@ -304,21 +288,6 @@ audio {
     text-align: center;
     position: relative;
     color: white;
-}
-
-.hero-music::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.hero-music .hero-content {
-    z-index: 2;
-    padding: 2em;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
 }
 
 /* Confirmation Fade-in */
@@ -348,44 +317,43 @@ audio {
     opacity: 1;
 }
 
-/* Accordion Style: Tap Menu */
+/* Accordion for Tap Menu */
 .tap-accordion {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.8s ease, opacity 0.8s ease;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
 }
 
 .tap-accordion.show {
-    max-height: 600px;
+    max-height: 1000px;
     opacity: 1;
 }
 
-/* Beer List Inside Accordion */
+/* Beer List Accordion Formatting */
 .beer-list {
-    background-color: #fcf9ec;
-    border: 2px solid #4e5b31;
-    border-radius: 10px;
-    padding: 1em 2em;
     list-style: none;
-    margin-top: 1em;
+    padding: 1em 2em;
+    margin: 1em auto;
+    background-color: #fffaf0;
+    border: 2px solid #5d4037;
+    border-radius: 12px;
     max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #2e3b0f;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    color: #3e2f22;
+    font-size: 1.1em;
 }
 
 .beer-list li {
     padding: 0.5em 0;
-    border-bottom: 1px solid #bfb28f;
-    font-size: 1.1em;
+    border-bottom: 1px solid #d6c4a5;
 }
 
 .beer-list li:last-child {
     border-bottom: none;
 }
 
-/* Menu Block Wrapper (earthy tone) */
+/* Menu Block */
 .menu-block {
     background-color: #f0ead2;
     border: 2px solid #4e5b31;
@@ -394,12 +362,36 @@ audio {
     margin: 2em auto;
     max-width: 900px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .menu-block h3 {
     color: #3e4a1f;
     font-size: 1.5em;
     margin-bottom: 0.5em;
+}
+
+/* Timeline List */
+.history-timeline {
+    background-color: #f0ead2;
+    border: 2px solid #4e5b31;
+    border-radius: 12px;
+    padding: 1.5em 2em;
+    margin: 2em auto;
+    max-width: 900px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    color: #3e2f22;
+    list-style-position: inside;
+}
+
+.history-timeline li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #d6c4a5;
+}
+
+.history-timeline li:last-child {
+    border-bottom: none;
 }
 
 /* Footer */
@@ -409,10 +401,6 @@ footer {
     text-align: center;
     padding: 1em;
     font-size: 1em;
-}
-
-footer p {
-    margin-bottom: 0.5em;
 }
 
 footer a {
@@ -473,4 +461,34 @@ footer a:hover {
     .grid section {
         padding: 1.5em;
     }
+}
+
+/* Contact Form Block Styling */
+.contact-form-block {
+    background-color: #fffaf0;
+    border: 2px solid #5d4037;
+    border-radius: 12px;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 700px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-top: 1em;
+    display: block;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    margin-top: 1em;
 }
