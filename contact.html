@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- 
+Student Name: Jessie Conn
+File Name: contact.html
+Date: 04/24/2025
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Eastern Kentucky Tourism</title>
+  <link rel="stylesheet" href="css/styles.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Eastern Kentucky Tourism</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="things-to-do.html">Things to Do</a></li>
+        <li><a href="places-to-eat.html">Places to Eat & Drink</a></li>
+        <li><a href="local-music.html">Local Music</a></li>
+        <li><a href="history.html">History</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions or need more information, please contact us:</p>
+        <ul>
+          <li>Email: <a href="mailto:info@easternkentuckytourism.com">info@easternkentuckytourism.com</a></li>
+          <li>Phone: (800) 555-1234</li>
+          <li>Address: 123 Appalachian Way, Lexington, KY</li>
+        </ul>
+
+        <button class="menu-toggle" onclick="toggleForm()">Start Contact Form</button>
+
+        <div class="form-wrapper" id="formWrapper">
+          <form id="contact-form" class="menu-table" action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="topic">Topic:</label>
+            <select id="topic" name="topic">
+              <option value="info">General Info</option>
+              <option value="travel">Travel Planning</option>
+              <option value="events">Events</option>
+              <option value="other">Other</option>
+            </select>
+
+            <fieldset>
+              <legend>How should we contact you?</legend>
+              <label><input type="radio" name="contact-method" value="email" required /> Email</label><br/>
+              <label><input type="radio" name="contact-method" value="phone" /> Phone</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>What are you interested in?</legend>
+              <label><input type="checkbox" name="interests" value="hiking" /> Hiking</label><br/>
+              <label><input type="checkbox" name="interests" value="music" /> Local Music</label><br/>
+              <label><input type="checkbox" name="interests" value="food" /> Food &amp; Drink</label>
+            </fieldset>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+          <p id="confirmation"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eastern Kentucky Tourism Group | Contact us: info@easternkentuckytourism.com</p>
+  </footer>
+
+  <script>
+    function toggleForm() {
+      document.getElementById("formWrapper").classList.toggle("show");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contact-form");
+      const confirmation = document.getElementById("confirmation");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        confirmation.textContent = `Thanks for your message, ${name}! We'll get back to you soon.`;
+        confirmation.classList.add("show");
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>
+
+
