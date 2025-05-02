@@ -38,10 +38,10 @@ Date: 04/24/2025
         </figure>
 
         <div class="menu-button-wrapper">
-          <button class="menu-toggle" onclick="toggleMiguelMenu()">View Menu</button>
+          <button class="menu-toggle">View Menu</button>
         </div>
 
-        <div id="miguel-menu" class="tap-accordion">
+        <div class="tap-accordion">
           <table class="menu-table">
             <thead>
               <tr><th>Item</th><th>Description</th><th>Price</th></tr>
@@ -65,10 +65,10 @@ Date: 04/24/2025
         </figure>
 
         <div class="menu-button-wrapper">
-          <button class="menu-toggle" onclick="toggleTapList()">What's on Tap?</button>
+          <button class="menu-toggle">What's on Tap?</button>
         </div>
 
-        <div id="tap-menu" class="tap-accordion">
+        <div class="tap-accordion">
           <ul class="beer-list">
             <li>Light Beer</li>
             <li>Wheat Ale</li>
@@ -98,15 +98,16 @@ Date: 04/24/2025
   </footer>
 
   <script>
-    function toggleMiguelMenu() {
-      const menu = document.getElementById("miguel-menu");
-      menu.classList.toggle("show");
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButtons = document.querySelectorAll(".menu-toggle");
 
-    function toggleTapList() {
-      const tap = document.getElementById("tap-menu");
-      tap.classList.toggle("show");
-    }
+      toggleButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const content = button.closest(".menu-block").querySelector(".tap-accordion");
+          content.classList.toggle("show");
+        });
+      });
+    });
   </script>
 </body>
 </html>
