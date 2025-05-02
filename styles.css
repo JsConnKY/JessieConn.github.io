@@ -1,0 +1,533 @@
+/* 
+Student Name: Jessie Conn
+File Name: styles.css
+Date: 04/24/2025
+*/
+
+/* CSS Reset */
+body, h1, h2, h3, p, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #2a1f14;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    font-family: "Emblema One", serif;
+}
+
+header nav {
+    margin-top: 1em;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+    padding: 2em;
+    background-color: white;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #2a1f14;
+}
+
+section p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+
+section ul {
+    font-size: 1.1em;
+}
+
+section ul li {
+    margin-bottom: 1.5em;
+}
+
+/* Ordered List Styling */
+ol {
+    margin: 1.5em 0;
+    padding-left: 2em;
+    font-size: 1.1em;
+    color: #333;
+}
+
+ol li {
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+}
+
+/* Contact Form Styling */
+form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 600px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2a1f14;
+    box-shadow: 0 0 5px rgba(42, 31, 20, 0.6);
+    outline: none;
+}
+
+button, .menu-toggle {
+    padding: 0.75em 1.5em;
+    background-color: #5d4037; 
+    color: #fff8e1;
+    border: 2px solid #3e2f22;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+button:hover, .menu-toggle:hover {
+    background-color: #3e2f22;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.menu-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+
+/* Figure + Image Styling */
+figure {
+    margin: 1em 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 0.5em;
+}
+
+figcaption {
+    font-size: 0.9em;
+    text-align: center;
+    color: #555;
+    margin-top: 0.5em;
+}
+
+.music-img, .menu-img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 8px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.75em;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #2a1f14;
+    font-weight: bold;
+}
+
+.menu-table {
+    background-color: #fff8e1;
+    border: 2px solid #5d4037;
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+    margin: 1.5em auto;
+}
+
+.menu-table th {
+    background-color: #ffe0b2;
+    color: #4e342e;
+    font-weight: bold;
+}
+
+.menu-table td {
+    background-color: #fffaf0;
+}
+
+/* Audio Player */
+audio {
+    display: block;
+    margin: 1em 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Hero Backgrounds */
+.hero {
+    background: url("../images/eky.jpg") no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.hero::before,
+.hero-history::before,
+.hero-music::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.hero-content,
+.hero-history .hero-content,
+.hero-music .hero-content {
+    z-index: 2;
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    color: #f4f4f4;
+}
+
+.hero-history {
+    background: url("../images/cabin.jpg") no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.hero-music {
+    background: url("../images/instruments.jpg") no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+
+/* Confirmation Fade-in */
+#confirmation {
+    font-weight: bold;
+    margin-top: 1em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in;
+}
+
+#confirmation.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Slide-in Form Animation */
+.form-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 1s ease, opacity 1s ease;
+}
+
+.form-wrapper.show {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+/* Accordion for Tap Menu */
+.tap-accordion {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.tap-accordion.show {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+/* Beer List Accordion Formatting */
+.beer-list {
+    list-style: none;
+    padding: 1em 2em;
+    margin: 1em auto;
+    background-color: #fffaf0;
+    border: 2px solid #5d4037;
+    border-radius: 12px;
+    max-width: 90%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    color: #3e2f22;
+    font-size: 1.1em;
+}
+
+.beer-list li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #d6c4a5;
+}
+
+.beer-list li:last-child {
+    border-bottom: none;
+}
+
+/* Menu Block */
+.menu-block {
+    background-color: #f0ead2;
+    border: 2px solid #4e5b31;
+    border-radius: 12px;
+    padding: 1.5em;
+    margin: 2em auto;
+    max-width: 900px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-block h3 {
+    color: #3e4a1f;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Timeline List */
+.history-timeline {
+    background-color: #f0ead2;
+    border: 2px solid #4e5b31;
+    border-radius: 12px;
+    padding: 1.5em 2em;
+    margin: 2em auto;
+    max-width: 900px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    color: #3e2f22;
+    list-style-position: inside;
+}
+
+.history-timeline li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #d6c4a5;
+}
+
+.history-timeline li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    background-color: #2a1f14;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+}
+
+footer a {
+    color: #f6eee4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section p, section ul li {
+        font-size: 1em;
+    }
+
+    .music-img, .menu-img, .menu-table, audio {
+        max-width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 769px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .grid section {
+        padding: 1.5em;
+    }
+}
+
+/* Contact Form Block Styling */
+.contact-form-block {
+    background-color: #fffaf0;
+    border: 2px solid #5d4037;
+    border-radius: 12px;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 700px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-top: 1em;
+    display: block;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+form fieldset label {
+    display: block;
+    margin-bottom: 0.75em;
+    font-weight: bold;
+    background-color: #fff3e0;
+    border: 1px solid #d7ccc8;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+form fieldset label:hover {
+    background-color: #ffe0b2;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    transform: scale(1.25);
+    margin-right: 0.75em;
+    cursor: pointer;
+}
+
+form input[type="radio"]:focus,
+form input[type="checkbox"]:focus {
+    outline: 2px solid #ff9800;
+    outline-offset: 2px;
+}
+
+
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    margin-top: 1em;
+}
+
