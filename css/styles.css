@@ -131,18 +131,22 @@ input:focus, select:focus, textarea:focus {
 }
 
 button, .menu-toggle {
-    padding: 0.75em;
-    background-color: #2a1f14;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    padding: 0.75em 1.5em;
+    background-color: #5d4037; 
+    color: #fff8e1;
+    border: 2px solid #3e2f22;
+    border-radius: 10px;
     font-weight: bold;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
 }
 
 button:hover, .menu-toggle:hover {
     background-color: #3e2f22;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .menu-button-wrapper {
@@ -487,7 +491,38 @@ form input[type="radio"] {
     margin-right: 0.5em;
 }
 
-form input, form select, form textarea {
+form fieldset label {
+    display: block;
+    margin-bottom: 0.75em;
+    font-weight: bold;
+    background-color: #fff3e0;
+    border: 1px solid #d7ccc8;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+form fieldset label:hover {
+    background-color: #ffe0b2;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    transform: scale(1.25);
+    margin-right: 0.75em;
+    cursor: pointer;
+}
+
+form input[type="radio"]:focus,
+form input[type="checkbox"]:focus {
+    outline: 2px solid #ff9800;
+    outline-offset: 2px;
+}
+
+
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
     width: 100%;
     box-sizing: border-box;
 }
@@ -495,3 +530,4 @@ form input, form select, form textarea {
 form button {
     margin-top: 1em;
 }
+
